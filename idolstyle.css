@@ -1,0 +1,90 @@
+body {
+    font-family: 'Bangers', cursive;
+    background-image: url(https://wallpapercave.com/wp/tYwMp1K.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h1 {
+    text-align: center;
+}
+header h1 {
+    font-size: 3.5em;
+    color: transparent;
+    letter-spacing: 8px;
+    animation:  header_animate 1s ease-in-out forwards ;
+    animation-delay: 1s;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.container  {
+    perspective: 700px;
+}
+.cube {
+    transform-style: preserve-3d;
+    transition: transform 2s ease-in-out;
+    width: 330px;
+    height: 230px;
+    margin: 100px 50px;
+}
+.cube h1 {
+   color: white;
+}
+.cube p {
+    color: white;
+    font-size: 1em;
+    padding: 5px;
+    text-align: center;
+}
+.cube:hover {
+    transform: rotate3d(0,1,0,-270deg)
+}
+.front,
+.back,
+.left,
+.right {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+}
+.front {
+    transform: translateZ(220px);
+}
+.back {
+    transform: translateZ(-110px) rotateY(270deg) ;
+    transform-origin: center left;
+    background-color: #0C090D;
+}
+.left {
+    transform:rotateY(-270deg) translateX(110px);
+    transform-origin:top right;
+}
+.right {
+    transform:translateZ(-110px) rotateY(180deg);
+}
+
+
+/* keyframes */
+@keyframes header_animate {
+    100% {
+        color: wheat;
+    }
+}
+/* media query for desktop */
+@media only screen and (min-width:1500px){
+    .box {
+        flex-direction: row;
+        min-height: 50vh;
+    }
+    header h1 {
+        margin-top: 200px;
+        font-size: 3.5em;
+    }
+}
